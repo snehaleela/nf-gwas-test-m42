@@ -12,6 +12,8 @@ process IMPUTED_TO_PLINK2 {
     plink2 \
         --vcf $imputed_vcf_file dosage=DS \
         --make-pgen \
+        --chr 1-22 \  
+        --allow-extra-chr \
         $delimiter \
         --out ${imputed_vcf_file.baseName} \
         --threads ${task.cpus} \
